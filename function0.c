@@ -4,12 +4,7 @@
 
 /**
  * charpr - function that prints %c.
- * strpr - function that prints %s.
- * percpr - function that prints %.
- * intdisp - function that prints %d and %i.
  * @p: function parameter.
- * @perc: function parameter.
- * @a: function parameter.
  * Return: always variable z.
  */
 
@@ -23,6 +18,12 @@ int charpr(va_list p)
 	return (z);
 }
 
+/**
+ * strpr - function that prints %s.
+ * @p: function parameter.
+ * Return: always variable z.
+ */
+
 int strpr(va_list p)
 {
 	char *s;
@@ -34,6 +35,12 @@ int strpr(va_list p)
 	return (z);
 }
 
+/**
+ * percpr - function that prints %.
+ * @perc: function parameter.
+ * Return: always variable z.
+ */
+
 int percpr(char perc)
 {
 	int z = 0;
@@ -42,6 +49,12 @@ int percpr(char perc)
 	z = z + 1;
 	return (z);
 }
+
+/**
+ * intdisp - function that prints %d and %i.
+ * @a: function parameter.
+ * Return: always variable z.
+ */
 
 int intdisp(int a)
 {

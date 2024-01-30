@@ -1,14 +1,16 @@
 #include <unistd.h>
 #include "main.h"
 #include <stdarg.h>
+
 /**
  * _printf - function that produces output according to a format.
  * @format: function parameter.
  * Return: always len.
  */
+
 int _printf(const char *format, ...)
 {
-	int a, z;
+	int a, d, y, z;
 	char c, *s;
 	va_list p;
 
@@ -34,6 +36,29 @@ int _printf(const char *format, ...)
 			c = '%';
 			write(1, &c, 1);
 			z++;
+			++a;
+		}
+		else if ((format[a] == '%' && format[a + 1] == 'd') || (format[a] == '%' && format[a + 1] == 'i'))
+		{
+			d = va_arg(p, int);
+			if (d == 0)
+			{
+				y = d + '0';
+				write(1, &y, 1);
+				z++;
+			}
+			else if (d < 0)
+			{
+				y = '-';
+				write(1, &y, 1);
+				z++;
+				d = d * (-1);
+				z += intdisp(d);
+			}
+			else
+			{
+				z += intdisp(d);
+			}
 			++a;
 		}
 		else

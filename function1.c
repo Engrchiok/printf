@@ -13,10 +13,10 @@ int intpr(va_list p)
 	int d, y, z = 0;
 
 	d = va_arg(p, int);
-	if ( d == 0)
+	if (d == 0)
 	{
-		y = d + '0';                       
-		write(1, &y, 1);                   
+		y = d + '0';
+		write(1, &y, 1);
 		z += 1;
 		return (z);
 	}

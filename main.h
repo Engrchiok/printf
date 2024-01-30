@@ -10,5 +10,6 @@ int charpr(va_list);
 int strpr(va_list);
 int percpr(char);
 int formpr(char);
+int intpr(va_list);
 
 #endif

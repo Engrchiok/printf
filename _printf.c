@@ -31,6 +31,11 @@ int _printf(const char *format, ...)
 			z += percpr('%');
 			++a;
 		}
+		else if ((format[a] == '%' && format[a + 1] == 'd') || (format[a] == '%' && format[a + 1] == 'i'))
+		{
+			z += intpr(p);
+			++a;
+		}
 		else
 			z += formpr(format[a]);
 	}

@@ -4,13 +4,15 @@
 /**
  * _printf - function that produces output according to a format.
  * @format: function parameter.
- * Return: always len.
+ * Return: always len or -1.
  */
 int _printf(const char *format, ...)
 {
 	int a, z;
 	va_list p;
 
+	if (format == NULL)
+		return (-1);
 	va_start(p, format);
 	for (a = 0, z = 0; format[a] != 0; a++)
 	{
@@ -30,10 +32,7 @@ int _printf(const char *format, ...)
 			++a;
 		}
 		else
-		{
-			write(1, &format[a], 1);
-			z++;
-		}
+			z += formpr(format[a]);
 	}
 	va_end(p);
 	return (z);

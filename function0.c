@@ -73,3 +73,16 @@ int intdisp(int a)
 	z++;
 	return (z);
 }
+
+/**
+ * formpr - function that prints the format string.
+ * Return: always z.
+ */
+
+int formpr(char format)
+{
+	int z = 0;
+
+	z += write(1, &format, 1);
+	return (z);
+}

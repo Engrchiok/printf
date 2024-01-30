@@ -25,7 +25,7 @@ int charpr(va_list p)
 
 int strpr(va_list p)
 {
-	char * s;
+	char *s;
 	int z = 0;
 
 	s = va_arg(p, char *);

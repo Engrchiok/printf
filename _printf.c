@@ -49,7 +49,7 @@ int _printf(const char *format, ...)
 				write(1, &y, 1);
 				z++;
 			}
-			else if(d < 0)
+			else if (d < 0)
 			{
 				y = '-';
 				write(1, &y, 1);

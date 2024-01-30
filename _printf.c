@@ -9,7 +9,6 @@
 int _printf(const char *format, ...)
 {
 	int a, z;
-	char c, *s;
 	va_list p;
 
 	va_start(p, format);
@@ -17,23 +16,17 @@ int _printf(const char *format, ...)
 	{
 		if (format[a] == '%' && format[a + 1] == 'c')
 		{
-			c = va_arg(p, int);
-			write(1, &c, 1);
-			z++;
+			z += charpr(p);
 			++a;
 		}
 		else if (format[a] == '%' && format[a + 1] == 's')
 		{
-			s = va_arg(p, char *);
-			write(1, s, _strlen(s));
-			z += _strlen(s);
+			z += strpr(p);
 			++a;
 		}
 		else if (format[a] == '%' && format[a + 1] == '%')
 		{
-			c = '%';
-			write(1, &c, 1);
-			z++;
+			z += percpr('%');
 			++a;
 		}
 		else

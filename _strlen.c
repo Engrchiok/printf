@@ -1,3 +1,9 @@
+/**
+ * _strlen - function that computes length of a string.
+ * @string: function parameter.
+ * Return: always len.
+ */
+
 int _strlen(const char *string)
 {
 	int a, len;

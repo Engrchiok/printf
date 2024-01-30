@@ -52,6 +52,7 @@ int percpr(char perc)
 
 /**
  * formpr - function that prints the format string.
+ * @format: function parameter.
  * Return: always z.
  */
 

@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
-#include <stdlib.h>
 
 /**
  * prints - function that prints strings.
@@ -28,7 +27,7 @@ int prints(va_list p, char a, char b, int *c)
 			return (prlen += _strlen(d));
 		}
 		else
-			exit (-1);
+			return (prlen);
 	}
 	else
 		return (prlen);

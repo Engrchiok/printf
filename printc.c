@@ -19,10 +19,10 @@ int printc(va_list p, char a, char b, int *c)
 	if (a == '%' && b == 'c')
 	{
 		d = va_arg(p, int);
+		*c = *c + 2;
 		if (d != '\0')
 		{
 			write(1, &d, 1);
-			*c = (*c + 2);
 			return (prlen += 1);
 		}
 		else

@@ -10,5 +10,7 @@ int printperc(va_list, char, char, int *);
 int _strlen(char *);
 int printd(va_list, char, char, int *);
 int prinum(int);
+int printb(va_list, char, char, int *);
+int pribin(int);
 
 #endif

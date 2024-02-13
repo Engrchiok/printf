@@ -19,17 +19,16 @@ int printd(va_list p, char a, char b, int *c)
 	if (a == '%' && (b == 'd' || b == 'i'))
 	{
 		d = va_arg(p, int);
+		*c = *c + 2;
 		if (d < 0)
 		{
 			write(1, "-", 1);
 			prlen += 1;
 			d = -(d);
-			*c = (*c + 2);
 			return (prlen += prinum(d));
 		}
 		else if (d >= 0)
 		{
-			*c = (*c + 2);
 			return (prlen += prinum(d));
 		}
 		else

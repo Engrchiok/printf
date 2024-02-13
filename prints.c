@@ -20,10 +20,10 @@ int prints(va_list p, char a, char b, int *c)
 	if (a == '%' && b == 's')
 	{
 		d = va_arg(p, char *);
+		*c = *c + 2;
 		if (d != NULL)
 		{			
 			write(1, d, _strlen(d));
-			*c = (*c + 2);
 			return (prlen += _strlen(d));
 		}
 		else

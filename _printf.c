@@ -11,16 +11,16 @@ int _printf(const char *format, ...)
 {
 	int a, b, z, prlen = 0;
 	va_list p;
-	int (*print[])(va_list p, char m, char n, int *y) = {&printc, &prints, &printperc, &printd};
+	int (*print[])(va_list p, char m, char n, int *y) = {&printc, &prints, &printperc, &printd, &printb};
 
-	z = 4;
+	z = 5;
 	if (format == NULL || (format[0] == '%' && format[1] == '\0'))
 		return (-1);
 	va_start(p, format);
 	for (a = 0; format[a] != '\0';)
 	{
 		if (format[a] == '%')
-			if (format[a + 1] == 'c' || format[a + 1] == 's' || format[a + 1] == '%' || format[a + 1] == 'd' || format[a + 1] == 'i')
+			if (format[a + 1] == 'c' || format[a + 1] == 's' || format[a + 1] == '%' || format[a + 1] == 'd' || format[a + 1] == 'i' || format[a + 1] == 'b')
 			{
 				for (b = 0; b < z; b++)
 					prlen += print[b](p, format[a], format[a + 1], &a);

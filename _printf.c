@@ -2,13 +2,11 @@
 #include <unistd.h>
 #include "main.h"
 #include <stdarg.h>
-
 /**
  * _printf - function that prints different specifiers.
  * @format: function parameter.
  * Return: always variable value of prlen.
  */
-
 int _printf(const char *format, ...)
 {
 	int a, b, z, prlen = 0;
@@ -25,9 +23,7 @@ int _printf(const char *format, ...)
 			if (format[a + 1] == 'c' || format[a + 1] == 's' || format[a + 1] == '%' || format[a + 1] == 'd' || format[a + 1] == 'i')
 			{
 				for (b = 0; b < z; b++)
-				{
 					prlen += print[b](p, format[a], format[a + 1], &a);
-				}
 			}
 			else
 				++a;

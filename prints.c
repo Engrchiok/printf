@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
  * prints - function that prints strings.
@@ -20,9 +21,14 @@ int prints(va_list p, char a, char b, int *c)
 	if (a == '%' && b == 's')
 	{
 		d = va_arg(p, char *);
-		write(1, d, _strlen(d));
-		*c = (*c + 2);
-		return (prlen += _strlen(d));
+		if (d != NULL)
+		{			
+			write(1, d, _strlen(d));
+			*c = (*c + 2);
+			return (prlen += _strlen(d));
+		}
+		else
+			exit (-1);
 	}
 	else
 		return (prlen);

@@ -2,6 +2,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <unistd.h>
+#include <stdlib.h>
 
 /**
  * printc - function that prints a character specifier.
@@ -19,9 +20,14 @@ int printc(va_list p, char a, char b, int *c)
 	if (a == '%' && b == 'c')
 	{
 		d = va_arg(p, int);
-		write(1, &d, 1);
-		*c = (*c + 2);
-		return (prlen += 1);
+		if (d != '\0')
+		{
+			write(1, &d, 1);
+			*c = (*c + 2);
+			return (prlen += 1);
+		}
+		else
+			exit (-1);
 	}
 	else
 		return (prlen);

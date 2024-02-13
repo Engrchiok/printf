@@ -16,7 +16,7 @@ int printd(va_list p, char a, char b, int *c)
 {
 	int d, prlen = 0;
 
-	if (a == '%' && b == 'd')
+	if (a == '%' && (b == 'd' || b == 'i'))
 	{
 		d = va_arg(p, int);
 		if (d < 0)

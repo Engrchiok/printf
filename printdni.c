@@ -12,24 +12,24 @@
  * Return: always prlen.
  */
 
-int printd(va_list p, char a, char b, int *c)
+int printdni(va_list *p, char b, int *c)
 {
 	int d, prlen = 0;
 
-	if (a == '%' && (b == 'd' || b == 'i'))
+	if (b == 'd' || b == 'i')
 	{
-		d = va_arg(p, int);
+		d = va_arg(*p, int);
 		*c = *c + 2;
 		if (d < 0)
 		{
 			write(1, "-", 1);
 			prlen += 1;
 			d = -(d);
-			return (prlen += prinum(d));
+			return (prinum(d, &prlen));
 		}
 		else if (d >= 0)
 		{
-			return (prlen += prinum(d));
+			return (prinum(d, &prlen));
 		}
 		else
 			return (prlen);

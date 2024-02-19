@@ -3,24 +3,24 @@
 #include "main.h"
 
 /**
- * pribin - function that prints binary numbets.
+ * prinoct - function that prints octal integers.
  * @d: function parameter.
- * Return: always 0 or *prlen.
+ * Return: always *prlen or 0.
  */
 
-int pribin(int d, int *prlen)
+int prinoct(unsigned int d, int *prlen)
 {
-	int a;
+	unsigned int a;
 
 	if (d < 0 || d == '\0')
 		return (0);
 	else
 	{
-		a = (d % 2) + '0';
-		d = d / 2;
+		a = (d % 8) + '0';
+		d = d / 8;
 		if (d != 0)
 		{
-			pribin(d, prlen);
+			prinoct(d, prlen);
 		}
 		write(1, &a, 1);
 		return (*prlen += 1);

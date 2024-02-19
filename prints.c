@@ -12,14 +12,14 @@
  * Return: always prlen.
  */
 
-int prints(va_list p, char a, char b, int *c)
+int prints(va_list *p, char b, int *c)
 {
 	char *d;
 	int prlen = 0;
 
-	if (a == '%' && b == 's')
+	if (b == 's')
 	{
-		d = va_arg(p, char *);
+		d = va_arg(*p, char *);
 		*c = *c + 2;
 		if (d != NULL)
 		{			

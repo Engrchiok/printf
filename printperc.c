@@ -12,12 +12,12 @@
  * Return: always prlen.
  */
 
-int printperc(va_list p, char a, char b, int *c)
+int printperc(va_list *p, char b, int *c)
 {
 	int prlen = 0;
 	
 	(void)p;
-	if (a == '%' && b == '%')
+	if (b == '%')
 	{
 		write(1, "%", 1);
 		*c = (*c + 2);

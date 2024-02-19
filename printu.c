@@ -3,29 +3,27 @@
 #include "main.h"
 
 /**
- * printd - function that prints binary integers.
+ * printu - function that prints unsigned numbers.
  * @p: function parameter.
- * @a: function parameter.
  * @b: function parameter.
  * @c: function parameter.
  * Return: always prlen.
  */
 
-int printb(va_list *p, char b, int *c)
+int printu(va_list *p, char b, int *c)
 {
-	int d, prlen = 0;
+	unsigned int a;
+	int prlen = 0;
 
-	if (b == 'b')
+	if (b == 'u')
 	{
-		d = va_arg(*p, int);
+		a = va_arg(*p, unsigned int);
 		*c = *c + 2;
-		if (d < 0 || d == '\0')
-		{
+		if (a < 0 || a == '\0')
 			return (prlen);
-		}
 		else
 		{
-			return (pribin(d, &prlen));
+			return (prinunint(a, &prlen));
 		}
 	}
 	else

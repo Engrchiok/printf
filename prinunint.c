@@ -3,26 +3,27 @@
 #include <stdarg.h>
 #include <unistd.h>
 
-/** prinum - function that prints unsigned decimal integers.
+/**
+ * prinunint - function that prints unsigned integers.
  * @a: function parameter.
  * Return: always prlen or 0.
  */
 
-int prinum(int a, int *prlen)
+int prinunint(unsigned int a, int *prlen)
 {
-	int b;
+	unsigned int b;
 
-	if (a < 0 || a == '\0')
+/*	if (a < 0 || a == '\0')
 		return (0);
 	else
-	{
+	{*/
 		b = (a % 10) + '0';
 		a = a / 10;
 		if (a != 0)
 		{
-			prinum(a, prlen);
+			prinunint(a, prlen);
 		}
 		write(1, &b, 1);
 		return (*prlen += 1);
-	}
+//	}
 }

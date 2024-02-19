@@ -13,10 +13,10 @@ int prinunint(unsigned int a, int *prlen)
 {
 	unsigned int b;
 
-/*	if (a < 0 || a == '\0')
+	if (a < 0 || a == '\0')
 		return (0);
 	else
-	{*/
+	{
 		b = (a % 10) + '0';
 		a = a / 10;
 		if (a != 0)
@@ -25,5 +25,5 @@ int prinunint(unsigned int a, int *prlen)
 		}
 		write(1, &b, 1);
 		return (*prlen += 1);
-//	}
+	}
 }
